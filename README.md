@@ -7,6 +7,11 @@
 4. Установть зависимости из requirements.txt: pip install -r requirements.txt
 5. Перейти в папку frontend и установить зависимости для React: npm install
 6. Собрать react: npm install dev
-7. Далее выполняем: cd .. & python manage.py collectstatic & python manage.py runserver
+7. Далее выполняем сдедующие команды: 
+
+cd ..
+python manage.py collectstatic 
+python manage.py runserver
+
 8. Открываем бразер и переходим по адресу: http://127.0.0.1:8000
 9. Для работы экспорта таблицы в pdf формате необходимо чтобы на машине стояла программа LibreOffice, проверить можно командой: soffice
