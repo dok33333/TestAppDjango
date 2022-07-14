@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Django REST with React</title>
+</head>
+
+{% block css %}
+  {% load static %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+  crossorigin="anonymous"
+/>
+{% endblock %}
+
+<body>
+  <div id="app_script">
+    <!-- React will load here -->
+  </div>
+</body>
+{% block static %}
+{% load static %}
+<script async src="{% static 'js/index/main.js' %}"></script>
+{% endblock %}
+
+</html>
