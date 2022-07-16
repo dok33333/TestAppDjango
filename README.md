@@ -6,7 +6,7 @@
 3. Активировать виртуальное окружение.
 4. Установть зависимости из requirements.txt: pip install -r requirements.txt
 5. Перейти в папку frontend и установить зависимости для React: npm install
-6. Собрать react: npm install dev
+6. Собрать react: npm run dev
 7. Далее выполняем сдедующие команды: 
 
 cd ..
