@@ -1,10 +1,12 @@
 import os
 import json
+from platform import platform
 import httpx
 import asyncio
 import requests
 import xlsxwriter
 import pandas as pd
+from sys import platform
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -18,7 +20,7 @@ def index(request):
 
 def create_XLSX(data):
     path = 'media/temp/'
-    if not os.path.exists(path): assert os.makedirs(path)
+    if not os.path.exists(path): os.makedirs(path)
     name_file = path + "report.xlsx"
     name_worksheet_report = ('Report')
     workbook = xlsxwriter.Workbook(name_file)
@@ -145,6 +147,9 @@ def export(request):
             pdf_file_name = file_name.replace('xlsx', 'pdf')
             path = os.getcwd() + '\\media\\temp'
             cmd_line = f"cd {path} & soffice --convert-to pdf report.xlsx"
+            if platform == "linux" or platform == "linux2" or platform == "darwin":
+                path = os.getcwd() + '/media/temp'
+                cmd_line = f"cd {path}; soffice --convert-to pdf report.xlsx"
             res_conv = os.system(cmd_line)
             if res_conv == 0:
                 print("Report conversion xlsx in pdf successfully!")
